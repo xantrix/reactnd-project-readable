@@ -2,7 +2,9 @@
   "name": "reactnd-project-readable",
   "version": "1.0.0",
   "description": "project for Udacity's Redux course.",
-  "main": "index.js",
+  "engines": {
+    "node": "6.11.x"
+  },
   "scripts": {
     "start": "node api-server/server.js",
     "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
