@@ -1,0 +1,24 @@
+{
+  "name": "reactnd-project-readable",
+  "version": "1.0.0",
+  "description": "project for Udacity's Redux course.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node api-server/server.js",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xantrix/reactnd-project-readable.git"
+  },
+  "author": "xantrix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xantrix/reactnd-project-readable/issues"
+  },
+  "homepage": "https://github.com/xantrix/reactnd-project-readable#readme"
+}
