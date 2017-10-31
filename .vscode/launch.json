@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+      "name": "react",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3002",
+      "webRoot": "${workspaceRoot}/react-ui/src",
+      "userDataDir": "${workspaceRoot}/.vscode/chrome",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      }
+    }]
+  }

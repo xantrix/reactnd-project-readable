@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import api from './api';
 
 class App extends Component {
   
@@ -10,32 +11,20 @@ class App extends Component {
   };  
 
   componentDidMount() {
-    let myHeaders = new Headers();
-    myHeaders.append("Authorization", "whatever-you-want");
-    myHeaders.append("Accept", "application/json");
-
-    let myInit = {
-      method: 'GET',
-      headers: myHeaders,
-      //mode: 'cors',
-      cache: 'default'
-    };
-
-    fetch('/categories', myInit)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`status ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(json => {
+    api.get('/categories')
+    .then(({data}) => {
       this.setState({
-        message: json.categories.reduce((sum, value) => sum + value.name + ",", ""),
+        message: data.categories.reduce((sum, value) => sum + value.name + ",", ""),
         fetching: false
       });
-    }).catch(e => {
+    })
+    .catch(error => {
+      if (error.response) {
+        throw new Error(`status ${error.response.data}`);
+      }
+
       this.setState({
-        message: `API call failed: ${e}`,
+        message: `API call failed: ${error}`,
         fetching: false
       });
     })
