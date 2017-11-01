@@ -8,11 +8,20 @@ import { fetchCategories } from 'models/Category/actions'
 //components
 import Category from './components/Category/Category';
 
-const mapStateToProps = ({ post, category, filter, router }) => ({
+/**
+ * https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options
+ * [mapStateToProps(state, [ownProps]): stateProps] (Function)
+ * ownProps:props passed to the connected component
+ */
+const mapStateToProps = ({ postForm, category, filter, router }) => ({
   categories: category.categories,
+  pathname: router.location.pathname
 })
 
-const mapDispatchToProps = (dispatch, { onPostClick }) => (
+/**
+ * [mapDispatchToProps(dispatch, [ownProps]): dispatchProps] (Object or Function)
+ */
+const mapDispatchToProps = (dispatch, ownProps) => (
   bindActionCreators({
     fetchCategories,
   }, dispatch)

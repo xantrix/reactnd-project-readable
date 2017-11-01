@@ -1,3 +1,31 @@
-.Category {
-  text-align: center;
+.category-container h3 {
+    color: gray;
+    text-transform: uppercase;
+    opacity: 0.6;
+    font-size: 0.9em;
+}
+
+.category-container ul {
+  padding-left: 5px;
+}
+
+.category-container li {
+  list-style: none;
+  margin-bottom: 5px;
+
+}
+  
+.category-container a {
+  display: block;
+  padding: 10px 10px;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: rgba(#000, 0.8);    
+}
+
+.category-container .selected {
+  background-color: #ececec;
+  border-radius: 5px;
 }
