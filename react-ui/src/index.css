@@ -1,5 +1,7 @@
 :root {
   --main-font-family: 'Helvetica', sans-serif;
+  --black: #000;
+  --gray: #999;
 }
 
 *, *:before, *:after {
@@ -15,8 +17,6 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  /* background: $background_color; */
-  /* color: $black; */
 }
 
 .main-container {

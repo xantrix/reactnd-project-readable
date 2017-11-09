@@ -6,9 +6,17 @@ const initialState = {
   error: null,
 }
 
+/**
+ * https://github.com/pburtchaell/redux-promise-middleware/blob/master/docs/guides/reducers.md
+ */
 export default (state=initialState, action) => {
   switch(action.type) {
-
+    case `${FETCH_CATEGORIES}_PENDING`:
+      return {
+        ...state,
+        isFetching: true
+      };
+    
     case `${FETCH_CATEGORIES}_FULFILLED`:
       return {
         ...state,
