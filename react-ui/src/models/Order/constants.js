@@ -1,0 +1,2 @@
+export const ORDER_POSTS = 'ORDER_POSTS';
+export const ORDER_COMMENTS = 'ORDER_COMMENTS';

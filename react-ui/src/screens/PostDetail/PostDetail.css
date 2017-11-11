@@ -1,0 +1,237 @@
+.post-detail .down-vote, 
+.post-detail .up-vote, 
+.post-detail .edit-button, 
+.post-detail .delete-button {
+  display: inline-block;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0; 
+}
+
+.post-detail .down-vote, 
+.post-detail .up-vote {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px; 
+}
+
+.post-detail .up-vote {
+  background-image: url('./images/up.png'); 
+}
+
+.post-detail .down-vote {
+  background-image: url('./images/down.png'); 
+}
+
+.post-detail .likes-container {
+  color: #FFF; 
+}
+
+.post-detail .likes-count {
+  border-radius: 5px;
+  background-color: #33cdff;
+  font-size: 0.7em;
+  font-weight: 600;
+  padding: 8px;
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.1); 
+}
+
+.post-detail .likes-buttons {
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
+}
+
+.post-detail .edit-button {
+  background-image: url('./images/edit.png');
+  width: 28px;
+  height: 22px; 
+}
+
+.post-detail .delete-button {
+  background-image: url('./images/delete.png');
+  width: 28px;
+  height: 22px; 
+}
+
+.post-detail .safety-link {
+  text-decoration: none;
+  color: #33cdff;
+  font-size: 1.1em;
+  border-bottom: 2px solid rgba(234, 83, 42, 0.5);
+  padding-bottom: 4px;
+}
+
+.post-detail .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url(/static/media/banner.a8e67b16.jpg); */
+  background-size: cover;
+  height: 300px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  position: relative; 
+}
+
+.post-detail .header h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 2.6em; 
+}
+
+.post-detail .header .likes-container {
+  position: absolute;
+  bottom: 40px;
+  margin-left: -50px; 
+}
+
+.post-detail .header .danger-buttons {
+  bottom: 30px;
+  right: 70px;
+  position: absolute; 
+}
+
+.post-detail .header .date {
+  position: absolute;
+  top: 30px;
+  right: 70px;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.9em; 
+}
+
+.post-detail .header .delete-button {
+  margin-left: 10px; 
+}
+
+.post-detail .content {
+  max-width: 600px;
+  margin: 100px auto; 
+}
+
+.post-detail .content .description {
+  text-align: justify;
+  line-height: 1.6;
+  white-space: pre-wrap; 
+}
+.post-detail .content .add-comment-container {
+  margin-top: 60px; 
+}
+
+.post-detail .content .add-comment-container form {
+  text-align: right; 
+}
+
+.post-detail .content .add-comment-container fieldset {
+  border: none;
+  margin: 0px;
+  padding: 0;
+  margin-bottom: 20px; 
+}
+
+.post-detail .content .add-comment-container input, 
+.post-detail .content .add-comment-container textarea {
+  font-size: 0.95em;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  outline: none;
+  width: 600px; 
+}
+
+.post-detail .content .add-comment-container input::placeholder, 
+.post-detail .content .add-comment-container textarea::placeholder {
+    color: #000; 
+}
+
+.post-detail .content .add-comment-container .edit-mode {
+  transition: 0.5s border ease-out;
+  border: 1px solid rgba(234, 83, 42, 0.9); 
+}
+
+.post-detail .content .add-comment-container input {
+  height: 45px;
+  padding-left: 30px; 
+}
+
+.post-detail .content .add-comment-container textarea {
+  height: 190px;
+  padding: 30px 0 0 30px;
+  resize: none; 
+}
+
+.post-detail .content .add-comment-container .cancel {
+  border: none;
+  background: transparent;
+  font-size: 1.1em;
+  color: #999;
+  outline: none;
+  cursor: pointer;
+  margin-right: 20px; 
+}
+
+.post-detail .content .add-comment-container .button {
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: 600;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.12);
+  padding: 8px 20px;
+  border-radius: 3px; 
+}
+
+.post-detail .content .add-comment-container .button--primary {
+  background: #33cdff;
+  color: rgba(255, 255, 255, 0.9); 
+}
+
+.post-detail .comments {
+  margin-top: 60px;
+  position: relative; 
+}
+
+.post-detail .comments ul, .post-detail .comments ol {
+  padding-left: 0px; 
+}
+
+.post-detail .comments ol {
+  font-size: 1em;
+  margin-bottom: 50px; 
+}
+
+.post-detail .comments .filter-wrapper {
+  position: absolute;
+  right: -45%;
+  top: 0px; 
+}
+
+.post-detail .comments h3, .post-detail .comments .meta {
+  color: #999; 
+}
+
+.post-detail .comments h3 {
+  font-size: 0.8em;
+  text-transform: uppercase; 
+}
+
+.post-detail .comments .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 0.9em; 
+}
+
+.post-detail .comments .danger-buttons {
+  position: relative;
+  top: 7px; 
+}
+
+.post-detail .comments .date {
+  text-align: center; 
+}

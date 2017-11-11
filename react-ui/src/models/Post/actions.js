@@ -46,8 +46,32 @@ export const fetchSinglePost = (id) => ({
   payload: api.get(`/posts/${id}`).then(res => res.data)
 })
 
-
 export const votePost = (id, option) => ({
   type: VOTE_POST,
   payload: api.post(`/posts/${id}`, { option }).then(res => res.data)
+})
+
+export const createPost = ({ title, body, author, category }) => ({
+  type: CREATE_POST,
+  payload: api.post('/posts', {
+    id: uuidv4(),
+    timestamp: Date.now(),
+    title,
+    body,
+    author,
+    category,
+  }).then(res => res.data),
+})
+
+export const updatePost = (id, {title, body }) => ({
+  type: UPDATE_POST,
+  payload: api.put(`/posts/${id}`, {
+    title,
+    body,
+  }).then(res => res.data),
+})
+
+export const deletePost = (id) => ({
+  type: DELETE_POST,
+  payload: api.delete(`/posts/${id}`).then(res => id)
 })

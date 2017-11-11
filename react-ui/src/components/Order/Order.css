@@ -1,0 +1,46 @@
+.order-container {
+  color: #999; 
+}
+
+.order-container h3 {
+  text-transform: uppercase;
+  opacity: 0.6;
+  font-size: 0.9em;
+  margin-bottom: 20px; 
+}
+
+.order-container ul {
+  font-size: 1.05em;
+  list-style: none;
+  display: flex;
+  padding-left: 0px;
+  margin: 0 0 10px 0; 
+}
+
+.order-container ul input {
+  visibility: hidden;
+  display: none; 
+}
+
+.order-container ul label {
+  cursor: pointer; 
+}
+
+.order-container ul input:checked + label {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 600; 
+}
+
+.order-container .separator {
+  opacity: 0.15;
+  width: 90%; 
+}
+
+.order-container .slash {
+  margin: 0 8px; 
+}
+
+.order-container .votes {
+  margin-left: 5px;
+  color: #000; 
+}

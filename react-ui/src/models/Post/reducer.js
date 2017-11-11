@@ -74,6 +74,32 @@ export default function post(state = initialState, action) {
         post: postWithVoteScore,
       };
 
+    case `${CREATE_POST}_FULFILLED`:
+      return {
+        ...state,
+        posts: state.posts.concat(action.payload),
+      }
+
+    case `${UPDATE_POST}_FULFILLED`:
+      return {
+        ...state,
+        posts: state.posts.filter(post =>
+          post.id !== action.payload.id
+        ).concat(action.payload),
+        post: Object.assign({}, state.post, action.payload)
+      }
+
+    case `${DELETE_POST}_FULFILLED`:
+      return {
+        ...state,
+        posts: state.posts.map(post =>
+          post.id === action.payload ?
+            Object.assign({}, post, { deleted: true }) :
+            post
+        ),
+        post: Object.assign({}, state.post, { deleted: true })
+      };
+
     default:
       return state;
   }

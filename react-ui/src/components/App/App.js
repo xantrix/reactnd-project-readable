@@ -8,6 +8,7 @@ import Header from 'components/Header/Header';
 import PostForm from 'components/PostForm/PostForm';
 //screens
 import Home from 'screens/Home/Home';
+import PostDetail from 'screens/PostDetail/PostDetail';
 //actions
 import { togglePostForm } from 'models/PostForm/actions';
 
@@ -29,6 +30,7 @@ class App extends Component {
       <div className="container">
         <Header togglePostForm={togglePostForm} />
         <Route exact path="/:category?" component={Home}/>
+        <Route path='/:category/:postId' component={PostDetail} />
         <PostForm/>
     </div>
     )
