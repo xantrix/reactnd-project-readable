@@ -35,7 +35,7 @@ export const updateComment = (id, { author, body }) => ({
   }).then(res => res.data),
 })
 
-export const editingComment = (comment) => ({
+export const editComment = (comment) => ({
   type: EDITING_COMMENT,
   payload: comment,
 })

@@ -15,7 +15,7 @@ import {
   fetchComments,
   createComment, 
   deleteComment, 
-  editingComment, 
+  editComment, 
   updateComment,
   voteComment,
 } from 'models/Comment/actions';
@@ -42,7 +42,7 @@ const mapDispatchToProps = (dispatch) => {
     createComment,
     voteComment,
     orderComments,
-    editingComment,
+    editComment,
     updateComment,
     deleteComment,
     votePost,
@@ -150,7 +150,7 @@ class PostDetail extends Component {
                       <input  
                         name="author" 
                         type="text" 
-                        placeholder="What's your name?" 
+                        placeholder="commenter" 
                         defaultValue={isEditing ? editingComment.author: ''}
                         className={isEditing ? 'edit-mode' : ''}
                         required 
@@ -159,7 +159,7 @@ class PostDetail extends Component {
                     <fieldset>
                       <textarea 
                         name="body" 
-                        placeholder="Say something nice..." 
+                        placeholder="..." 
                         defaultValue={isEditing ? editingComment.body: ''} 
                         className={isEditing ? 'edit-mode' : ''}
                         required 
@@ -173,7 +173,7 @@ class PostDetail extends Component {
                       Cancel
                     </button>
                     <button className="button button--primary" type="submit">
-                      { isEditing ? 'Save' : 'Post' }
+                      { isEditing ? 'Save comment' : 'Post comment' }
                     </button>
                   </form>
                 </div>
@@ -198,7 +198,7 @@ class PostDetail extends Component {
                                     this.props.editComment(comment)
                                   }} 
                                   className="edit-button"
-                                >edit-comment</a>
+                                > </a>
                                 <div onClick={() => this.onDeleteComment(comment.id)} className="delete-button"></div>
                               </div>
                               <div className="likes-container">
