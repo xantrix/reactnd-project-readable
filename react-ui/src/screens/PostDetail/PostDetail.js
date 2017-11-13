@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 //components
 import Order from 'components/Order/Order';
+import Comment from './components/Comment/Comment';
 
 //actions
 import { fetchSinglePost, votePost, deletePost } from 'models/Post/actions';
@@ -64,6 +65,11 @@ class PostDetail extends Component {
     if (shouldDelete === true) {
       this.props.deleteComment(id)
     }
+  }
+
+  onEditingComment = (comment) => {
+    this.formRef.reset();
+    this.props.editComment(comment);
   }
 
   onDeletePost = () => {
@@ -186,32 +192,13 @@ class PostDetail extends Component {
                     {
                       !!filteredComments.length && filteredComments.map(comment => (
                         !comment.deleted && (
-                          <ol key={comment.id}>
-                            <p>{comment.body}</p>
-                            <div className="meta">
-                              <span className="author">by {comment.author}</span>
-                              <span className="date">{date(comment.timestamp)}</span>
-                              <div className="danger-buttons">
-                                <a href="#edit-anchor" 
-                                  onClick={() =>  {
-                                    this.formRef.reset();
-                                    this.props.editComment(comment)
-                                  }} 
-                                  className="edit-button"
-                                > </a>
-                                <div onClick={() => this.onDeleteComment(comment.id)} className="delete-button"></div>
-                              </div>
-                              <div className="likes-container">
-                                <span className="likes-count">
-                                  {comment.voteScore > 0 ? `+${comment.voteScore}` : comment.voteScore}
-                                </span>
-                                <div className="likes-buttons">
-                                  <span onClick={() => voteComment(comment.id, 'upVote')} className="up-vote"></span>
-                                  <span onClick={() => voteComment(comment.id, 'downVote')} className="down-vote"></span>
-                                </div>
-                              </div>
-                            </div>
-                          </ol>
+                          <Comment
+                            key={comment.id}
+                            comment={comment}
+                            onEditingComment={this.onEditingComment}
+                            onDeleteComment={this.onDeleteComment}
+                            voteComment={voteComment}
+                          />
                         )
                     ))}
                     </ul>

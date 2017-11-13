@@ -61,7 +61,7 @@
   text-decoration: none;
   color: #33cdff;
   font-size: 1.1em;
-  border-bottom: 2px solid rgba(234, 83, 42, 0.5);
+  border-bottom: 2px solid rgba(0, 128, 163, 0.7);
   padding-bottom: 4px;
 }
 
@@ -70,7 +70,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-image: url(/static/media/banner.a8e67b16.jpg); */
   background-size: cover;
   height: 300px;
   text-align: center;
@@ -150,7 +149,7 @@
 
 .post-detail .content .add-comment-container .edit-mode {
   transition: 0.5s border ease-out;
-  border: 1px solid rgba(234, 83, 42, 0.9); 
+  border: 1px solid rgba(0, 128, 163, 0.9); 
 }
 
 .post-detail .content .add-comment-container input {
