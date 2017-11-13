@@ -3,7 +3,7 @@ import React from 'react';
 //components
 import Post from './components/Post/Post';
 
-export default function PostList ({posts, isFetching, onClickVote, onPostClick }) {
+export default function PostList ({posts, isFetching, onClickVote, onPostClick, togglePostForm, onDeletePost }) {
   return (
     <ul>
     { 
@@ -15,6 +15,8 @@ export default function PostList ({posts, isFetching, onClickVote, onPostClick }
               post={post} 
               onClickVote={onClickVote} 
               onPostClick={onPostClick}
+              togglePostForm={togglePostForm}
+              onDeletePost={onDeletePost}
             /> 
           )
         ))

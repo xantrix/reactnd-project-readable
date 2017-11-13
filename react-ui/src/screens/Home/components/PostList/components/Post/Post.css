@@ -139,3 +139,31 @@
   text-align: right;
   font-size: 0.85em;
 }
+
+.post-container .danger-buttons {
+  bottom: 30px;
+  right: 70px;
+  position: absolute; 
+}
+
+.post-container .edit-button {
+  background-image: url('./images/edit.png');
+  width: 22px;
+  height: 22px; 
+}
+
+.post-container .delete-button {
+  background-image: url('./images/delete.png');
+  width: 22px;
+  height: 22px; 
+}
+
+.post-container .edit-button, 
+.post-container .delete-button {
+  display: inline-block;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0; 
+}

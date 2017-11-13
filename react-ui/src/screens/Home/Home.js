@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 
 //actions
 import { fetchCategories } from 'models/Category/actions'
-import { fetchPostsAndComments, votePost } from 'models/Post/actions'
+import { fetchPostsAndComments, votePost, deletePost } from 'models/Post/actions'
 import { orderPosts } from 'models/Order/actions';
+import { togglePostForm } from 'models/PostForm/actions';
 
 //components
 import Category from './components/Category/Category';
@@ -36,6 +37,8 @@ const mapDispatchToProps = (dispatch, ownProps) => (
     fetchPostsAndComments,
     votePost,
     orderPosts,
+    togglePostForm,
+    deletePost,
   }, dispatch)
 )
 
@@ -44,6 +47,14 @@ class Home extends Component {
   componentDidMount() {
     this.props.fetchCategories();
     this.props.fetchPostsAndComments();
+  }
+
+  onDeletePost = (post) => {
+    const shouldDelete = window.confirm("Delete this Post?");
+    if (shouldDelete === true) {
+      this.props.deletePost(post.id)
+      this.props.history.push('/')
+    }
   }
 
   filterPostByCategory(posts, pathname) {
@@ -87,6 +98,8 @@ class Home extends Component {
               isFetching={isFetching}
               onClickVote={this.props.votePost}
               onPostClick={pathname => this.props.history.push(pathname)}
+              togglePostForm={this.props.togglePostForm}
+              onDeletePost={this.onDeletePost}
             />
           </div>
           <div className="right-container">

@@ -3,7 +3,7 @@ import React from 'react';
 import './Post.css';
 import dateFormat from 'app/util/date';
 
-export default function Post ({ post, onClickVote, onPostClick }) {
+export default function Post ({ post, onClickVote, onPostClick, togglePostForm, onDeletePost }) {
   return (
     <li key={post.id} className="post-container">
 
@@ -37,6 +37,10 @@ export default function Post ({ post, onClickVote, onPostClick }) {
               <span onClick={() => onClickVote(post.id, 'upVote')} className="up-vote"></span>
               <span onClick={() => onClickVote(post.id, 'downVote')} className="down-vote"></span>
             </div>
+          </div>
+          <div className="danger-buttons">
+            <div onClick={() => togglePostForm(true, post)} className="edit-button"></div>
+            <div onClick={() => onDeletePost(post)} className="delete-button"></div>
           </div>
         </div>
 
