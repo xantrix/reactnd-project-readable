@@ -6,11 +6,11 @@
     "node": "6.11.x"
   },
   "scripts": {
-    "start": "cd api-server/ && npm install && node server.js",
-    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "server": "npm run start",
-    "client": "cd react-ui/ && npm start",
-    "start-dev": "concurrently \"npm run server\"  \"npm run client\""
+    "start": "concurrently \"npm run server\"  \"npm run client-build\"",
+    "server": "cd api-server/ && npm install && node server.js",
+    "client-build": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "client-dev": "cd react-ui/ && npm install && npm start",
+    "start-dev": "concurrently \"npm run server\"  \"npm run client-dev\""
   },
   "cacheDirectories": [
     "node_modules",
